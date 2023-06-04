@@ -1,0 +1,101 @@
+html {
+    font-size: 62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+section .points {
+    width: 50vw;
+    padding: 2rem 0;
+}
+
+section .points > * {
+    text-align: center;
+    font-size: 2.2rem;
+    color: white;
+}
+section .points:first-of-type {
+    background-color: darkred;
+}
+section .points:last-of-type {
+    background-color: darkcyan;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-buttons {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    justify-content: space-evenly;
+
+}
+.section-buttons p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.fa-solid {
+    font-size: 5rem;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    transition: all 1s;
+    cursor: pointer;
+    margin: 2rem 0;
+}
+
+.fa-hand-back-fist {
+    animation-name: rock-anm;
+}
+
+.fa-hand-peace {
+    animation-name: paper-anm;
+}
+
+.fa-hand {
+    animation-name: scissors-anm;
+}
+
+.fa-solid:hover {
+    animation-duration: 1s;
+    transform: scale(1.3);
+}
+
+@keyframes rock-anm {
+    0% {color: rgb(0, 34, 31);}
+    20% {color: rgb(2, 51, 47);}
+    40% {color: rgb(2, 92, 85);}
+    60% {color: rgb(2, 129, 118);}
+    80% {color: rgb(1, 52, 48);}
+    100% {color: rgb(1, 36, 33);}
+}
+
+@keyframes paper-anm {
+    0% {color: darkcyan;}
+    20% {color: rgb(6, 35, 152);}
+    40% {color: rgb(132, 132, 6);}
+    60% {color: darkred;}
+    80% {color: red;}
+    100% {color: darkcyan;}
+}
+
+@keyframes scissors-anm {
+    0% {color: rgb(132, 132, 6);}
+    20% {color: red;}
+    40% {color: darkred;}
+    60% {color: darkcyan;}
+    80% {color: rgb(6, 35, 152);}
+    100% {color: red;}
+}
