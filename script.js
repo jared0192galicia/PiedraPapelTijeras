@@ -8,6 +8,7 @@
 var selectionMachine;
 var ptBoot = 0;
 var ptPlayer = 0;
+var empate = 0;
 
 var ptMax = prompt("Hasta cuantos puntos decea jugar?");
 
@@ -34,21 +35,28 @@ function selectedHand() {
 
 function winner(selec) {
     if (selec == selectionMachine) {
-        alert('Empate');
+        // alert('Empate');
+        empate++;
+        countEmpate.innerHTML = empate;
+        leyend.innerHTML = "Empate!";
+
     } else if (selec == 0 && selectionMachine == 1) {
         // alert('Perdiste');
         ptBoot++;
         countBoot.innerHTML = ptBoot; 
+        leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 1 && selectionMachine == 0) {
         // alert('Ganaste');
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer; 
+        leyend.innerHTML = "Ganaste!";
 
     } else if (selec == 0 && selectionMachine == 2) {
         // alert('Ganaste');
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
+        leyend.innerHTML = "Ganaste!";
 
     } else if (selec == 2 && selectionMachine == 0) {
         // alert('Perdiste');
@@ -59,11 +67,13 @@ function winner(selec) {
         // alert('Perdiste');
         ptBoot++;
         countBoot.innerHTML = ptBoot; 
+        leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 2 && selectionMachine == 1) {
         // alert('Ganaste');
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
+        leyend.innerHTML = "Ganaste!";
 
     } else {
         alert('Sin definir');
@@ -71,8 +81,10 @@ function winner(selec) {
 
     if (ptBoot == ptMax) {
         alert("Haz Perdido!")
+        window.location.reload()
     } else if (ptPlayer == ptMax) {
         alert("Haz Ganado!!")
+        window.location.reload()
     }
 }
 

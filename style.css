@@ -1,5 +1,10 @@
+:root {
+    --ltr-color: white;
+}
+
 html {
     font-size: 62.5%;
+    background-color: #131516;
 }
 * {
     margin: 0;
@@ -20,10 +25,14 @@ section .points {
 section .points > * {
     text-align: center;
     font-size: 2.2rem;
-    color: white;
+    color: var(--ltr-color)
 }
 section .points:first-of-type {
     background-color: darkred;
+}
+
+section .points:nth-child(2) {
+    background-color: darkviolet;
 }
 section .points:last-of-type {
     background-color: darkcyan;
@@ -39,13 +48,24 @@ main {
     width: 70vw;
     display: flex;
     flex-direction: row;
-    border: 1px solid red;
+    /* border: 1px solid rgb(198, 226, 222); */
+    margin: 2rem auto;
     justify-content: space-evenly;
 
 }
 .section-buttons p {
     font-size: 2rem;
     font-weight: 700;
+    text-align: center;
+    color: var(--ltr-color)
+}
+.section-buttons div {
+  border-width: 2px;
+  border-style: solid;  
+  animation-name: border-anm;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+    /* margin: auto 4rem; */
 }
 .fa-solid {
     font-size: 5rem;
@@ -53,7 +73,7 @@ main {
     animation-iteration-count: infinite;
     transition: all 1s;
     cursor: pointer;
-    margin: 2rem 0;
+    margin: 2rem 3rem;
 }
 
 .fa-hand-back-fist {
@@ -61,16 +81,36 @@ main {
 }
 
 .fa-hand-peace {
-    animation-name: paper-anm;
+    animation-name: rock-anm;
 }
 
 .fa-hand {
-    animation-name: scissors-anm;
+    animation-name: rock-anm;
 }
 
 .fa-solid:hover {
     animation-duration: 1s;
     transform: scale(1.3);
+    animation-name: shadow;
+    /* animation-duration: 2s; */
+    animation-iteration-count: infinite;
+    /* animation */
+    /* animation-name: rock-anm; */
+}
+
+main h1 {
+    font-size: 4rem;
+    color: var(--ltr-color);
+    padding: 2rem 0;
+}
+@keyframes shadow {
+    0% {text-shadow: 0 0 10px #ffffff;}
+    20% {text-shadow: 0 0 10px #bdfaee;}
+    /* 40% {text-shadow: 0 0 10px #89ffe7;} */
+    30% {text-shadow: 0 0 10px #73fadf;}
+    60% {text-shadow: 0 0 10px #8654e8;}
+    80% {text-shadow: 0 0 10px #9ea8ee;}
+    100% {text-shadow: 0 0 10px #fdfeff;}
 }
 
 @keyframes rock-anm {
@@ -78,8 +118,8 @@ main {
     20% {color: rgb(2, 51, 47);}
     40% {color: rgb(2, 92, 85);}
     60% {color: rgb(2, 129, 118);}
-    80% {color: rgb(1, 52, 48);}
-    100% {color: rgb(1, 36, 33);}
+    80% {color: rgb(0, 224, 205);}
+    100% {color: rgb(1, 80, 73);}
 }
 
 @keyframes paper-anm {
@@ -98,4 +138,10 @@ main {
     60% {color: darkcyan;}
     80% {color: rgb(6, 35, 152);}
     100% {color: red;}
+}
+
+@keyframes border-anm {
+    0% {border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;}
+    50% {border-image: linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(204, 0, 255)) 1  round;}
+    100% {border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;}
 }
