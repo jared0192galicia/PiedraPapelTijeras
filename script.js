@@ -17,6 +17,7 @@ function run() {
     btnRock.onclick = selectedRock;
     btnPaper.onclick = selectedPaper;
     btnHand.onclick = selectedHand;
+    machineSelection.onclick = animationError;
 
 }
 
@@ -103,6 +104,14 @@ function selectOption() {
     machineSelection.classList.add(actualClass);
     console.log(machineSelection.className)
     // }
+}
+
+function animationError() {
+    machineSelection.classList.add("click-error");
+    setTimeout(() => {
+        console.log("1 Segundo esperado")
+        machineSelection.classList.remove("click-error");
+      }, 1000);
 }
 
 run();

@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: row;
 }
-
+ 
 section .points {
     width: 50vw;
     padding: 2rem 0;
@@ -68,6 +68,7 @@ main {
     /* margin: auto 4rem; */
 }
 .fa-solid {
+    color: #1b1b1b;
     font-size: 5rem;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -97,19 +98,29 @@ main {
     /* animation */
     /* animation-name: rock-anm; */
 }
-
+#machineSelection:hover {
+    /* rotate: 15deg; */
+    /* animation-name: rock-anm; */
+    transform: scale(1);
+}
 main h1 {
     font-size: 4rem;
     color: var(--ltr-color);
     padding: 2rem 0;
 }
+.click-error {
+    animation-name: boot-click;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
 @keyframes shadow {
-    0% {text-shadow: 0 0 10px #ffffff;}
-    20% {text-shadow: 0 0 10px #bdfaee;}
-    /* 40% {text-shadow: 0 0 10px #89ffe7;} */
-    30% {text-shadow: 0 0 10px #73fadf;}
-    60% {text-shadow: 0 0 10px #8654e8;}
-    80% {text-shadow: 0 0 10px #9ea8ee;}
+    0% {text-shadow: 0 0 15px #ffffff;}
+    10% {text-shadow: 0 0 10px #bdfaee;}
+    25% {text-shadow: 0 0 15px #73fadf;}
+    40% {text-shadow: 0 0 10px #8654e8;}
+    50% {text-shadow: 0 0 15px #e47a50;}
+    70% {text-shadow: 0 0 10px #c00000;}
+    85% {text-shadow: 0 0 15px #ee9e9e;}
     100% {text-shadow: 0 0 10px #fdfeff;}
 }
 
@@ -138,6 +149,16 @@ main h1 {
     60% {color: darkcyan;}
     80% {color: rgb(6, 35, 152);}
     100% {color: red;}
+}
+
+@keyframes boot-click {
+    0% {rotate: 15deg;}
+    20% {rotate: -15deg;}
+    40% {rotate: 15deg;}
+    60% {rotate: -15deg;}
+    80% {rotate: 15deg;}
+    100% {rotate: 0deg;}
+    
 }
 
 @keyframes border-anm {
