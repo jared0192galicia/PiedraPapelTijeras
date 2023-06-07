@@ -95,22 +95,34 @@ function selectOption() {
 
     // for (let i = 0; i < 3; i++) {
     // machineSelection.classList.remove(actualClass);
-    selectionMachine = Math.floor(Math.random() * 3);
+    
+    
+    
+    // setInterval(() => {
+        selectionMachine = Math.floor(Math.random() * 3);
+        console.log("Ejecutar cada 1 seg");
+        machineSelection.removeAttribute("class");
+        machineSelection.classList.add("fa-solid");
+        actualClass = clases[selectionMachine];
+        machineSelection.classList.add(actualClass);
+    // }, 100);
 
-    machineSelection.removeAttribute("class");
-    machineSelection.classList.add("fa-solid");
-
-    actualClass = clases[selectionMachine];
-    machineSelection.classList.add(actualClass);
     console.log(machineSelection.className)
-    // }
+
+    setTimeout(() => {
+        console.log("Stop")
+        window.clearInterval();
+      }, 1000);
 }
 
 function animationError() {
-    machineSelection.classList.add("click-error");
+    machineSelection.style.color = "white";
+    machineSelection.style.animationDuration = "0.5s";
+    machineSelection.style.animationName = "boot-click";
     setTimeout(() => {
         console.log("1 Segundo esperado")
-        machineSelection.classList.remove("click-error");
+        machineSelection.style.animationDuration = "5s";
+        machineSelection.style.animationName = "rock-anm";
       }, 1000);
 }
 

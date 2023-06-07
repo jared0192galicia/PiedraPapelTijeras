@@ -69,7 +69,7 @@ main {
 }
 .fa-solid {
     color: #1b1b1b;
-    font-size: 5rem;
+    font-size: 10rem;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     transition: all 1s;
@@ -114,14 +114,14 @@ main h1 {
     animation-iteration-count: 1;
 }
 @keyframes shadow {
-    0% {text-shadow: 0 0 15px #ffffff;}
-    10% {text-shadow: 0 0 10px #bdfaee;}
-    25% {text-shadow: 0 0 15px #73fadf;}
-    40% {text-shadow: 0 0 10px #8654e8;}
-    50% {text-shadow: 0 0 15px #e47a50;}
-    70% {text-shadow: 0 0 10px #c00000;}
-    85% {text-shadow: 0 0 15px #ee9e9e;}
-    100% {text-shadow: 0 0 10px #fdfeff;}
+    0% {text-shadow: 0 0 25px #ffffff;}
+    10% {text-shadow: 0 0 15px #bdfaee;}
+    25% {text-shadow: 0 0 25px #73fadf;}
+    40% {text-shadow: 0 0 15px #8654e8;}
+    50% {text-shadow: 0 0 25px #e47a50;}
+    70% {text-shadow: 0 0 12px #c00000;}
+    85% {text-shadow: 0 0 25px #ee9e9e;}
+    100% {text-shadow: 0 0 15px #fdfeff;}
 }
 
 @keyframes rock-anm {
@@ -166,3 +166,15 @@ main h1 {
     50% {border-image: linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(204, 0, 255)) 1  round;}
     100% {border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;}
 }
+
+ @media screen and (max-width: 800px) {
+    .fa-solid {
+        font-size: 8rem;
+    }
+ }
+
+ @media screen and (max-width: 475px) {
+    .fa-solid {
+        font-size: 6rem;
+    }
+ }
