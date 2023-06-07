@@ -10,9 +10,26 @@ var ptBoot = 0;
 var ptPlayer = 0;
 var empate = 0;
 
-var ptMax = prompt("Hasta cuantos puntos decea jugar?");
+var partBoot = 0;
+var partPlayer = 0;
 
+let ptMax = prompt("Hasta cuantos puntos decea jugar?");
+let partidas = 0;
+let partidasMax;
+
+// Funcion inicial
 function run() {
+
+    while (ptMax > 9 || (ptMax % 2 == 0)) {
+        ptMax = prompt("Elija un numero impar menor que 9");
+    }
+
+    partidasMax = prompt("Numero de partidas a jugar:");
+
+
+    while (partidasMax > 9 || (partidasMax % 2 == 0)) {
+        ptMax = prompt("Elija un numero impar menor que 9");
+    }
 
     btnRock.onclick = selectedRock;
     btnPaper.onclick = selectedPaper;
@@ -20,7 +37,9 @@ function run() {
     machineSelection.onclick = animationError;
 
 }
-
+/**
+ * Funciones de botones
+ */
 function selectedRock() {
     selectOption();
     winner(0);
@@ -34,58 +53,95 @@ function selectedHand() {
     winner(2);
 }
 
+// Selecciona a el ganador segun las elecciones realizadas
 function winner(selec) {
+
+    var color = "str";
+
     if (selec == selectionMachine) {
         // alert('Empate');
+        color = "rgb(230,230,250)";
         empate++;
         countEmpate.innerHTML = empate;
         leyend.innerHTML = "Empate!";
 
     } else if (selec == 0 && selectionMachine == 1) {
+        color = "rgb(230,2,2)";
         // alert('Perdiste');
         ptBoot++;
-        countBoot.innerHTML = ptBoot; 
+        countBoot.innerHTML = ptBoot;
         leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 1 && selectionMachine == 0) {
         // alert('Ganaste');
+        color = "rgb(2,230,2)";
         ptPlayer++;
-        countPlayer.innerHTML = ptPlayer; 
+        countPlayer.innerHTML = ptPlayer;
         leyend.innerHTML = "Ganaste!";
 
     } else if (selec == 0 && selectionMachine == 2) {
+        color = "rgb(2,230,2)";
         // alert('Ganaste');
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
         leyend.innerHTML = "Ganaste!";
 
     } else if (selec == 2 && selectionMachine == 0) {
-        // alert('Perdiste');
+        color = "rgb(230,2,2)";
         ptBoot++;
-        countBoot.innerHTML = ptBoot; 
+        countBoot.innerHTML = ptBoot;
 
     } else if (selec == 1 && selectionMachine == 2) {
+        color = "rgb(230,2,2)";
         // alert('Perdiste');
         ptBoot++;
-        countBoot.innerHTML = ptBoot; 
+        countBoot.innerHTML = ptBoot;
         leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 2 && selectionMachine == 1) {
         // alert('Ganaste');
+        color = "rgb(2,230,2)";
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
         leyend.innerHTML = "Ganaste!";
 
     } else {
+        color = "rgb(2,230,350)";
         alert('Sin definir');
     }
 
+    leyend.style.color = color;
+
+    // Compueba si existe algun ganador el ultimo punto
     if (ptBoot == ptMax) {
         alert("Haz Perdido!")
-        window.location.reload()
+        partBoot++;
+        countPartidasBoot.innerHTML = partBoot;
+        partidaTerminada();
     } else if (ptPlayer == ptMax) {
         alert("Haz Ganado!!")
-        window.location.reload()
+        partPlayer++;
+        partidaTerminada();
+        countPartidasPlayer.innerHTML = partPlayer;
+    }
+}
+
+// Aumenta la partida y reincia los puntos
+function partidaTerminada() {
+    if (partidas < partidasMax) {
+        partidas++;
+        ptBoot = 0;
+        ptPlayer = 0;
+        empate = 0;
+
+        countBoot.innerHTML = empate;
+        countEmpate.innerHTML = empate;
+        countPlayer.innerHTML = empate;
+
+        console.log(partidas + " <= " + partidasMax)
+
+    } else {
+        alert("La partida termino");
     }
 }
 
@@ -93,26 +149,19 @@ function selectOption() {
     let actualClass = "fa-hand-back-fists";
     let clases = ["fa-hand-back-fist", "fa-hand", "fa-hand-peace"];
 
-    // for (let i = 0; i < 3; i++) {
-    // machineSelection.classList.remove(actualClass);
+    selectionMachine = Math.floor(Math.random() * 3);
+    console.log("Ejecutar cada 1 seg");
+    machineSelection.removeAttribute("class");
+    machineSelection.classList.add("fa-solid");
+    actualClass = clases[selectionMachine];
+    machineSelection.classList.add(actualClass);
     
-    
-    
-    // setInterval(() => {
-        selectionMachine = Math.floor(Math.random() * 3);
-        console.log("Ejecutar cada 1 seg");
-        machineSelection.removeAttribute("class");
-        machineSelection.classList.add("fa-solid");
-        actualClass = clases[selectionMachine];
-        machineSelection.classList.add(actualClass);
-    // }, 100);
-
     console.log(machineSelection.className)
 
     setTimeout(() => {
         console.log("Stop")
         window.clearInterval();
-      }, 1000);
+    }, 1000);
 }
 
 function animationError() {
@@ -123,7 +172,7 @@ function animationError() {
         console.log("1 Segundo esperado")
         machineSelection.style.animationDuration = "5s";
         machineSelection.style.animationName = "rock-anm";
-      }, 1000);
+    }, 1000);
 }
 
 run();

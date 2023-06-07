@@ -6,6 +6,7 @@ html {
     font-size: 62.5%;
     background-color: #131516;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -16,17 +17,18 @@ section {
     display: flex;
     flex-direction: row;
 }
- 
+
 section .points {
     width: 50vw;
     padding: 2rem 0;
 }
 
-section .points > * {
+section .points>* {
     text-align: center;
     font-size: 2.2rem;
     color: var(--ltr-color)
 }
+
 section .points:first-of-type {
     background-color: darkred;
 }
@@ -34,6 +36,7 @@ section .points:first-of-type {
 section .points:nth-child(2) {
     background-color: darkviolet;
 }
+
 section .points:last-of-type {
     background-color: darkcyan;
 }
@@ -44,6 +47,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 .section-buttons {
     width: 70vw;
     display: flex;
@@ -53,20 +57,23 @@ main {
     justify-content: space-evenly;
 
 }
+
 .section-buttons p {
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
     color: var(--ltr-color)
 }
+
 .section-buttons div {
-  border-width: 2px;
-  border-style: solid;  
-  animation-name: border-anm;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+    border-width: 2px;
+    border-style: solid;
+    animation-name: border-anm;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
     /* margin: auto 4rem; */
 }
+
 .fa-solid {
     color: #1b1b1b;
     font-size: 10rem;
@@ -98,83 +105,202 @@ main {
     /* animation */
     /* animation-name: rock-anm; */
 }
+
 #machineSelection:hover {
     /* rotate: 15deg; */
     /* animation-name: rock-anm; */
     transform: scale(1);
 }
+
 main h1 {
-    font-size: 4rem;
+    font-size: 7rem;
     color: var(--ltr-color);
     padding: 2rem 0;
 }
+
 .click-error {
     animation-name: boot-click;
     animation-duration: 1s;
     animation-iteration-count: 1;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    color: white;
+}
+
+footer > h2 {
+    color: var(--ltr-color);
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
+    background-color: darkviolet;
+}
+
 @keyframes shadow {
-    0% {text-shadow: 0 0 25px #ffffff;}
-    10% {text-shadow: 0 0 15px #bdfaee;}
-    25% {text-shadow: 0 0 25px #73fadf;}
-    40% {text-shadow: 0 0 15px #8654e8;}
-    50% {text-shadow: 0 0 25px #e47a50;}
-    70% {text-shadow: 0 0 12px #c00000;}
-    85% {text-shadow: 0 0 25px #ee9e9e;}
-    100% {text-shadow: 0 0 15px #fdfeff;}
+    0% {
+        text-shadow: 0 0 25px #ffffff;
+    }
+
+    10% {
+        text-shadow: 0 0 15px #bdfaee;
+    }
+
+    25% {
+        text-shadow: 0 0 25px #73fadf;
+    }
+
+    40% {
+        text-shadow: 0 0 15px #8654e8;
+    }
+
+    50% {
+        text-shadow: 0 0 25px #e47a50;
+    }
+
+    70% {
+        text-shadow: 0 0 12px #c00000;
+    }
+
+    85% {
+        text-shadow: 0 0 25px #ee9e9e;
+    }
+
+    100% {
+        text-shadow: 0 0 15px #fdfeff;
+    }
 }
 
 @keyframes rock-anm {
-    0% {color: rgb(0, 34, 31);}
-    20% {color: rgb(2, 51, 47);}
-    40% {color: rgb(2, 92, 85);}
-    60% {color: rgb(2, 129, 118);}
-    80% {color: rgb(0, 224, 205);}
-    100% {color: rgb(1, 80, 73);}
+    0% {
+        color: rgb(0, 34, 31);
+    }
+
+    20% {
+        color: rgb(2, 51, 47);
+    }
+
+    40% {
+        color: rgb(2, 92, 85);
+    }
+
+    60% {
+        color: rgb(2, 129, 118);
+    }
+
+    80% {
+        color: rgb(0, 224, 205);
+    }
+
+    100% {
+        color: rgb(1, 80, 73);
+    }
 }
 
 @keyframes paper-anm {
-    0% {color: darkcyan;}
-    20% {color: rgb(6, 35, 152);}
-    40% {color: rgb(132, 132, 6);}
-    60% {color: darkred;}
-    80% {color: red;}
-    100% {color: darkcyan;}
+    0% {
+        color: darkcyan;
+    }
+
+    20% {
+        color: rgb(6, 35, 152);
+    }
+
+    40% {
+        color: rgb(132, 132, 6);
+    }
+
+    60% {
+        color: darkred;
+    }
+
+    80% {
+        color: red;
+    }
+
+    100% {
+        color: darkcyan;
+    }
 }
 
 @keyframes scissors-anm {
-    0% {color: rgb(132, 132, 6);}
-    20% {color: red;}
-    40% {color: darkred;}
-    60% {color: darkcyan;}
-    80% {color: rgb(6, 35, 152);}
-    100% {color: red;}
+    0% {
+        color: rgb(132, 132, 6);
+    }
+
+    20% {
+        color: red;
+    }
+
+    40% {
+        color: darkred;
+    }
+
+    60% {
+        color: darkcyan;
+    }
+
+    80% {
+        color: rgb(6, 35, 152);
+    }
+
+    100% {
+        color: red;
+    }
 }
 
 @keyframes boot-click {
-    0% {rotate: 15deg;}
-    20% {rotate: -15deg;}
-    40% {rotate: 15deg;}
-    60% {rotate: -15deg;}
-    80% {rotate: 15deg;}
-    100% {rotate: 0deg;}
-    
+    0% {
+        rotate: 15deg;
+    }
+
+    20% {
+        rotate: -15deg;
+    }
+
+    40% {
+        rotate: 15deg;
+    }
+
+    60% {
+        rotate: -15deg;
+    }
+
+    80% {
+        rotate: 15deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+
 }
 
 @keyframes border-anm {
-    0% {border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;}
-    50% {border-image: linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(204, 0, 255)) 1  round;}
-    100% {border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;}
+    0% {
+        border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;
+    }
+
+    50% {
+        border-image: linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(204, 0, 255)) 1 round;
+    }
+
+    100% {
+        border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;
+    }
 }
 
- @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .fa-solid {
         font-size: 8rem;
     }
- }
+}
 
- @media screen and (max-width: 475px) {
+@media screen and (max-width: 475px) {
     .fa-solid {
         font-size: 6rem;
     }
- }
+}
