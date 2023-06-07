@@ -14,7 +14,7 @@ var partBoot = 0;
 var partPlayer = 0;
 
 let ptMax = prompt("Hasta cuantos puntos decea jugar?");
-let partidas = 0;
+let partidas = 1;
 let partidasMax;
 
 // Funcion inicial
@@ -142,6 +142,7 @@ function partidaTerminada() {
 
     } else {
         alert("La partida termino");
+        window.location.href = "https://adistancia.unsis.edu.mx/mod/folder/view.php?id=200433";
     }
 }
 
