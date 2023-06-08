@@ -12,7 +12,12 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-
+.point {
+    width: 5px;
+    position: absolute;
+    height: 5px;
+    background-color: darkgoldenrod;
+}
 section {
     display: flex;
     flex-direction: row;
@@ -261,16 +266,12 @@ footer > h2 {
         rotate: -15deg;
     }
 
-    40% {
+    45% {
         rotate: 15deg;
     }
 
-    60% {
+    70% {
         rotate: -15deg;
-    }
-
-    80% {
-        rotate: 15deg;
     }
 
     100% {

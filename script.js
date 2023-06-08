@@ -59,7 +59,6 @@ function winner(selec) {
     var color = "str";
 
     if (selec == selectionMachine) {
-        // alert('Empate');
         color = "rgb(230,230,250)";
         empate++;
         countEmpate.innerHTML = empate;
@@ -67,13 +66,11 @@ function winner(selec) {
 
     } else if (selec == 0 && selectionMachine == 1) {
         color = "rgb(230,2,2)";
-        // alert('Perdiste');
         ptBoot++;
         countBoot.innerHTML = ptBoot;
         leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 1 && selectionMachine == 0) {
-        // alert('Ganaste');
         color = "rgb(2,230,2)";
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
@@ -81,7 +78,6 @@ function winner(selec) {
 
     } else if (selec == 0 && selectionMachine == 2) {
         color = "rgb(2,230,2)";
-        // alert('Ganaste');
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
         leyend.innerHTML = "Ganaste!";
@@ -93,13 +89,11 @@ function winner(selec) {
 
     } else if (selec == 1 && selectionMachine == 2) {
         color = "rgb(230,2,2)";
-        // alert('Perdiste');
         ptBoot++;
         countBoot.innerHTML = ptBoot;
         leyend.innerHTML = "Perdiste!";
 
     } else if (selec == 2 && selectionMachine == 1) {
-        // alert('Ganaste');
         color = "rgb(2,230,2)";
         ptPlayer++;
         countPlayer.innerHTML = ptPlayer;
@@ -167,7 +161,7 @@ function selectOption() {
 
 function animationError() {
     machineSelection.style.color = "white";
-    machineSelection.style.animationDuration = "0.5s";
+    machineSelection.style.animationDuration = "0.3s";
     machineSelection.style.animationName = "boot-click";
     setTimeout(() => {
         console.log("1 Segundo esperado")
