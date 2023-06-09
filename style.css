@@ -1,7 +1,9 @@
+/* Vars */
 :root {
     --ltr-color: white;
 }
 
+/* General */
 html {
     font-size: 62.5%;
     background-color: #131516;
@@ -12,39 +14,36 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-.point {
-    width: 5px;
-    position: absolute;
-    height: 5px;
-    background-color: darkgoldenrod;
-}
-section {
+/* header */
+header, section {
     display: flex;
     flex-direction: row;
 }
 
-section .points {
+header .points, section .points {
     width: 50vw;
     padding: 2rem 0;
 }
 
-section .points>* {
+section .points > *, header .points > * {
     text-align: center;
     font-size: 2.2rem;
     color: var(--ltr-color)
 }
 
-section .points:first-of-type {
+section .points:first-of-type, header .points:first-of-type {
     background-color: darkred;
 }
 
-section .points:nth-child(2) {
+section .points:nth-child(2), header .points:nth-child(2) {
     background-color: darkviolet;
 }
 
-section .points:last-of-type {
+section .points:last-of-type, header .points:last-of-type {
     background-color: darkcyan;
 }
+
+/* Main */
 
 main {
     display: flex;
@@ -105,15 +104,10 @@ main {
     animation-duration: 1s;
     transform: scale(1.3);
     animation-name: shadow;
-    /* animation-duration: 2s; */
     animation-iteration-count: infinite;
-    /* animation */
-    /* animation-name: rock-anm; */
 }
 
 #machineSelection:hover {
-    /* rotate: 15deg; */
-    /* animation-name: rock-anm; */
     transform: scale(1);
 }
 
@@ -128,6 +122,8 @@ main h1 {
     animation-duration: 1s;
     animation-iteration-count: 1;
 }
+
+/* Footer */
 
 footer {
     position: absolute;
@@ -144,6 +140,8 @@ footer > h2 {
     width: 100%;
     background-color: darkviolet;
 }
+
+/* KeyFrames for animations */
 
 @keyframes shadow {
     0% {
@@ -293,6 +291,8 @@ footer > h2 {
         border-image: linear-gradient(rgb(204, 0, 255), rgba(0, 0, 0, 0)) 1 round;
     }
 }
+
+/* Responsive desing */
 
 @media screen and (max-width: 800px) {
     .fa-solid {

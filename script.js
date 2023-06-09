@@ -1,10 +1,3 @@
-
-/**
- * 0 -> Roca
- * 1 -> papel
- * 2 -> Tijeras
- */
-
 var selectionMachine;
 var ptBoot = 0;
 var ptPlayer = 0;
@@ -17,9 +10,10 @@ let ptMax = prompt("Hasta cuantos puntos decea jugar?");
 let partidas = 1;
 let partidasMax;
 
-// Funcion inicial
+// funtion init
 function run() {
 
+    //  validation for the number of the árts and the points
     while (ptMax > 9 || (ptMax % 2 == 0)) {
         ptMax = prompt("Elija un numero impar menor que 9");
     }
@@ -31,33 +25,50 @@ function run() {
         ptMax = prompt("Elija un numero impar menor que 9");
     }
 
+    // Asignament funtions to components for event click
     btnRock.onclick = selectedRock;
     btnPaper.onclick = selectedPaper;
     btnHand.onclick = selectedHand;
     machineSelection.onclick = animationError;
 
 }
+
 /**
- * Funciones de botones
+ * The function "selectedRock" selects the "rock" option and determines the winner of the game.
  */
+
 function selectedRock() {
     selectOption();
     winner(0);
 }
+
+/**
+ * The function selects an option and declares the winner as paper.
+ */
 function selectedPaper() {
     selectOption();
     winner(1);
 }
+
+/**
+ * The function selects an option and declares the winner as player 2.
+ */
 function selectedHand() {
     selectOption();
     winner(2);
 }
 
-// Selecciona a el ganador segun las elecciones realizadas
+/**
+ * The function determines the winner of a game based on the selection of the player and the selection
+ * of the machine, updates the score and displays a message indicating the outcome.
+ * @param selec - The parameter "selec" is likely an integer representing the selection made by the
+ * player in a game (e.g. rock, paper, or scissors).
+ */
 function winner(selec) {
 
     var color = "str";
 
+    // Compare who winner
     if (selec == selectionMachine) {
         color = "rgb(230,230,250)";
         empate++;
@@ -106,7 +117,7 @@ function winner(selec) {
 
     leyend.style.color = color;
 
-    // Compueba si existe algun ganador el ultimo punto
+    // Compare if they are winner with the last point
     if (ptBoot == ptMax) {
         alert("Haz Perdido!")
         partBoot++;
@@ -120,9 +131,13 @@ function winner(selec) {
     }
 }
 
-// Aumenta la partida y reincia los puntos
+/**
+ * The function resets the game scores and increments the number of games played, but if the maximum
+ * number of games has been reached, it redirects to a Rick Astley video.
+ */
 function partidaTerminada() {
     if (partidas < partidasMax) {
+
         partidas++;
         ptBoot = 0;
         ptPlayer = 0;
@@ -136,10 +151,13 @@ function partidaTerminada() {
 
     } else {
         alert("La partida termino");
-        window.location.href = "https://adistancia.unsis.edu.mx/mod/folder/view.php?id=200433";
+        window.location.href = "https://youtu.be/dQw4w9WgXcQ";
     }
 }
 
+/**
+ * The function randomly selects a class from an array and adds it to an element's class list.
+ */
 function selectOption() {
     let actualClass = "fa-hand-back-fists";
     let clases = ["fa-hand-back-fist", "fa-hand", "fa-hand-peace"];
@@ -159,10 +177,16 @@ function selectOption() {
     }, 1000);
 }
 
+/**
+ * The function animates a machine selection by changing its color and applying CSS animations.
+ */
 function animationError() {
+    // Set animation error to boot component
     machineSelection.style.color = "white";
     machineSelection.style.animationDuration = "0.3s";
     machineSelection.style.animationName = "boot-click";
+
+    // Delay 1s and set animation default
     setTimeout(() => {
         console.log("1 Segundo esperado")
         machineSelection.style.animationDuration = "5s";
