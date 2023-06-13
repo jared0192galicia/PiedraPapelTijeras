@@ -22,7 +22,7 @@ function run() {
 
 
     while (partidasMax > 9 || (partidasMax % 2 == 0)) {
-        ptMax = prompt("Elija un numero impar menor que 9");
+        partidasMax = prompt("Elija un numero impar menor que 9");
     }
 
     // Asignament funtions to components for event click
